@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="jumbotron">
+    <div class="d-flex justify-content-center" style='text-align: center'>
+
+        <!-- Form -->
+        <form method="POST">
+            <!-- Pagina titel -->
+            <h1>Begeleider toevoegen</h1> <hr> <br>
+            {{form.hidden_tag()}}
+            <div class='row'>
+                <!-- Voornaam form label-->
+                <div class="col-md-6">
+                    <label class="form-label">{{form.voornaam.label}}</label>
+                    <br>{{form.voornaam()}}
+                </div>
+                <!-- Achternaam form label-->
+                <div class="col-md-6">
+                    <label class="form-label">{{form.achternaam.label}}</label>
+                    <br>{{form.achternaam()}}
+                </div>
+            </div>
+            
+            <br>
+            <!-- Submit knop -->
+            {{form.submit()}}
+        </form>
+    </div>
+</div>
+{% endblock %}

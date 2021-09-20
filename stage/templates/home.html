@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="jumbotron">
+    <div class="d-flex justify-content-center" style='text-align: center'>
+
+        <section class="py-5 text-center container">
+            <div class="col-lg-6 col-md-8 mx-auto">
+                <h1 class="fw-light">HBO-Stage</h1>
+                <p class="lead text-muted">Op deze website kunt u alle informatie vinden over uw stage.<br>Daarnaast
+                    kunt u alle beschikbare stageplekken vinden onder het tabblad 'Stageplekken'.</p>
+                {% if not current_user.is_authenticated %}
+                <p class="lead text-muted">
+                    Heeft u nog geen account?</p>
+                <p class="lead text-muted">Klik <a href="{{ url_for('register') }}">hier</a> om u te registreren</p>
+                <p class="lead text-muted">Klik <a href="{{ url_for('login') }}">hier</a> om u te login</p>
+                <p> Klik <a href="{{url_for('administratief.administratief') }}">hier</a> om direct naar het
+                    administratie paneel te gaan.</p>
+                {% else %}
+                <br>
+                <hr>
+                <p class="lead">Welkom terug {{current_user.username}}!</p>
+
+                {% endif %}
+            </div>
+        </section>
+
+    </div>
+</div>
+{% endblock %}

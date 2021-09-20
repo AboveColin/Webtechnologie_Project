@@ -1,0 +1,56 @@
+{% extends "base.html"%}
+{% block content %}
+<div class="jumbotron">
+    <div class="d-flex justify-content-center" style='text-align: center'>
+
+        <form method="POST">
+            <!-- Titel -->
+            <h1 class="card-title"> Registreren </h1>
+            <hr>
+            {{form.hidden_tag()}}
+            <!--Voornaamlabel-->
+            <div class="row">
+                <div class="col-md-6">
+                    <label class="form-label">{{form.voornaam.label}}*</label>
+                    <br>{{form.voornaam(class_="form-control", placeholder="Voornaam")}}
+                </div>
+                <div class="col-md-6">
+                    <!--achternaamlabel-->
+                    <label class="form-label">{{form.achternaam.label}}*</label>
+                    <br>{{form.achternaam(class_="form-control", placeholder="Achternaam")}}
+                </div>
+            </div>
+            <hr>
+            <!--emaillabel-->
+            <div class="row">
+                <div class="col-md-6">
+                    <label for="inputEmail4" class="form-label">{{form.email.label}}*</label>
+                    <br>{{form.email(class_="form-control", placeholder="E-mailadres")}}
+                </div>
+                <div class="col-md-6">
+                    <!--usernamelabel -->
+                    <label class="form-label">{{form.username.label}}*</label>
+                    <br>{{form.username(class_="form-control", placeholder="Gebruikersnaam")}}
+
+                </div>
+            </div>
+            <hr>
+            <!--wachtwoordlabel-->
+            <div class="row">
+                <div class="col-md-6">
+                    <label class="form-label">{{form.password.label}}*</label>
+                    <br>{{form.password(class_="form-control", placeholder="Wachtwoord")}}
+                </div>
+                <div class="col-md-6">
+                    <!--wachtwoordlabel-->
+                    <label class="form-label">{{form.pass_confirm.label}}*</label>
+                    <br>{{form.pass_confirm(class_="form-control", placeholder="Bevestig Wachtwoord")}}
+                </div>
+            </div>
+            <hr>
+            <!--Knop -->
+            {{form.submit()}}
+        </form>
+    </div>
+</div>
+{% endblock %}

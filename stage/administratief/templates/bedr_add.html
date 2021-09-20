@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="jumbotron">
+    <div class="d-flex justify-content-center" style='text-align: center'>
+
+        <!-- Forms -->
+        <form method="POST">
+            <!-- Pagina titel -->
+            <h1>Stageplek toevoegen</h1> <hr><br>
+            {{form.hidden_tag()}}
+            <div class='row'>
+                <!-- Bedrijf naam label -->
+                <div class="col-md-6">
+                    <label class="form-label">{{form.naam.label}}</label>
+                    <br>{{form.naam(class_="form-control")}}
+                </div>
+                <!-- Naam type label -->
+                <div class="col-md-6">
+                    <label class="form-label">{{form.soort.label}}</label>
+                    <br>{{form.soort(class_="form-control")}}
+                </div>
+            </div>
+            <br>
+            <!-- Submit button -->
+            {{form.submit()}}
+        </form>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="jumbotron">
+  <div class="d-flex justify-content-center" style='text-align: center'>
+
+    <!-- Form -->
+    <form method="POST">
+      <!-- Pagina title -->
+      <h1>Stageplek Verwijderen</h1> <br>
+      {{form.hidden_tag()}}
+      <!-- Bedrijf label en knop -->
+      {{form.bedrijven.label}}: {{form.bedrijven()}} {{form.submit()}}
+
+      <!-- Informatie tabel -->
+      <div class="container px-4">
+        <table class="table table-striped table-hover">
+          <thead>
+            <tr>
+              <th scope="col">Naam bedrijf: </th>
+              <th scope="col">ICT/Marketing:</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for ins in bedrijven %}
+            <tr>
+
+              <td>{{ins.naam}} </td>
+              <td>{{ins.soort}}</td>
+
+            </tr>
+            {% endfor %}
+
+          </tbody>
+        </table>
+      </div>
+    </form>
+
+  </div>
+</div>
+{% endblock %}

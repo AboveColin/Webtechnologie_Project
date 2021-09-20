@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="jumbotron">
+    <div class="d-flex justify-content-center" style='text-align: center'>
+        <!-- Form -->
+        <form method="POST">
+            <!--Titel -->
+            <br>
+            <h1 class="card-title">Inloggen</h1>
+            <hr>
+            {{form.hidden_tag()}}
+            <!-- Username label -->
+            <div class="col-md-6">
+                <label for="inputEmail4" class="form-label">{{form.username.label}}</label>
+                <br>{{form.username()}}
+            </div>
+            <!-- Password label -->
+            <div class="col-md-6">
+                <label for="inputPassword4" class="form-label">{{form.password.label}}</label>
+                <br>{{form.password()}}
+            </div>
+            <hr>
+            <!-- Knop -->
+            <div class="col-12">
+                {{form.submit()}}
+            </div>
+        </form>
+        <form>
+    </div>
+</div>
+{% endblock %}

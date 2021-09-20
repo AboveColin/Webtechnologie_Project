@@ -1,0 +1,81 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="jumbotron">
+  <div class="d-flex justify-content-center" style='text-align: center'>
+
+    <!-- Gebruiker ingelogd-->
+    {% if current_user.is_authenticated %}
+    {% if totaal %}
+
+    <br>
+    <!-- Tabel -->
+    <div class="container">
+      <h1 class="card-title">Stageplek, <u>{{totaal[0]}}</u></h1>
+      <hr>
+
+      <table class="table">
+        <thead>
+          <tr>
+
+            <th scope="col">Student</th>
+            <th scope="col">Bedrijf</th>
+            <th scope="col">Begeleider</th>
+            <th scope="col">Cijfer</th>
+            <th scope="col">Periode</th>
+
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+
+            <td>{{totaal[0]}}</td>
+            <td>{{totaal[1]}}</td>
+            <td>{{totaal[2]}}</td>
+            <td>{{totaal[3]}}</td>
+            <td>{{totaal[4]}}</td>
+
+          </tr>
+
+        </tbody>
+      </table>
+
+    </div>
+    
+
+    {% else %}
+    <h1 class="card-title">U heeft nog geen stage plaats, {{current_user.username}}.</h1>
+    {% endif %}
+
+
+    {% else %}
+    <!-- Gebruiker die niet is ingelogd-->
+    {% if not current_user.is_authenticated %}
+
+    <div class="container px-4">
+      <h1 class="card-title">Beschikbare Stageplekken</u></h1>
+      <!-- Tabel Stageplekken -->
+
+      <table class="table table-striped table-hover">
+        <thead>
+          <tr>
+            <th scope="col">Bedrijf</th>
+            <th scope="col">Type Bedrijf</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for bedrijf in bedrijf %}
+          <tr>
+            <td>{{bedrijf.naam}}</td>
+            <td>{{bedrijf.soort}}</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+
+      {% endif %}
+      {% endif %}
+
+
+    </div>
+  </div>
+  {% endblock %}

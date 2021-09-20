@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="jumbotron">
+    <div class="d-flex justify-content-center" style='text-align: center'>
+
+        <!-- Form -->
+        <form method="POST">
+            <h1>Student toevoegen aan stage/bedrijf</h1><br>
+            <h3>Bedrijf & Begeleider</h3>
+            <hr>
+            {{form.hidden_tag()}}
+            <!-- Form Student label-->
+            {{form.student.label}}: {{form.student()}} <br>
+            <!-- Form bedrijven label-->
+            {{form.bedrijven.label}}: {{form.bedrijven()}} <br>
+            <!-- Form begeleider label-->
+            {{form.begeleider.label}}: {{form.begeleider()}} <br><br>
+            <h3>Cijfer & Periode</h3>
+            <hr>
+            <div class='row'>
+                <div class="col-md-6">
+                    <label class="form-label">{{form.cijfer.label}}</label>
+                    <br>{{form.cijfer()}}
+                    <small>
+                        <p class="card-text">bijv: 7</p>
+                    </small>
+                </div>
+                <div class="col-md-6">
+                    <label class="form-label">{{form.periode.label}}</label>
+                    <br>{{form.periode()}}
+                    <small>
+                        <p class="card-text">bijv: sem. 1 2021</p>
+                    </small>
+                </div>
+            </div>
+            <!-- Submit knop-->
+            <br>
+            {{form.submit()}}
+        </form>
+    </div>
+</div>
+{% endblock %}

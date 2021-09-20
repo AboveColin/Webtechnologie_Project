@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="jumbotron">
+    <div class="d-flex justify-content-center" style='text-align: center'>
+
+        <!-- Form -->
+        <form method="POST">
+            <!-- Pagina titel -->
+            <h1>Studenten - Stage lijst</h1> <br>
+
+            <!-- Tabel -->
+            <div class="container">
+
+                <table class="table table table-striped table-hover">
+                    <thead>
+                        <tr>
+                            <th scope="col">Student</th>
+                            <th scope="col">Bedrijf</th>
+                            <th scope="col">Begeleider</th>
+                            <th scope="col">Cijfer</th>
+                            <th scope="col">Periode</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for stage in stages %}
+                        <tr>
+
+                            <td>{{stage[0]}}</td>
+                            <td>{{stage[1]}}</td>
+                            <td>{{stage[2]}}</td>
+                            <td>{{stage[3]}}</td>
+                            <td>{{stage[4]}}</td>
+
+                        </tr>
+                        {% endfor %}
+
+                    </tbody>
+                </table>
+
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock %}

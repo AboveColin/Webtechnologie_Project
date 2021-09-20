@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="jumbotron">
+    <div class="d-flex justify-content-center" style='text-align: center'>
+
+        <!-- Form -->
+        <form method="POST">
+            <!-- Pagina titel -->
+            <h1>Begeleider Verwijderen</h1><hr><br>
+            {{form.hidden_tag()}}
+            <!-- Label begeleider-->
+            {{form.begeleider.label}}: {{form.begeleider()}} {{form.submit()}}
+            <br>
+            <br>
+            <!-- laat verschillende begeleiders zien -->
+            <div class="container">
+
+                <table class="table table table-striped table-hover">
+                    <thead>
+                        <tr>
+                            <th scope="col">Voornaam</th>
+                            <th scope="col">Achternaam</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for beg in begeleiders %}
+                        <tr>
+
+                            <td>{{beg.voornaam}}</td>
+                            <td>{{beg.achternaam}}</td>
+
+                        </tr>
+                        {% endfor %}
+
+                    </tbody>
+                </table>
+
+            </div>
+        </form>
+    </div>
+
+</div>
+{% endblock %}

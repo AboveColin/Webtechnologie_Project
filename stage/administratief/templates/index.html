@@ -1,0 +1,85 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="jumbotron">
+  <center>
+    <!-- Pagina titel-->
+    <h1> Welkom Administrator!</h1>
+    <br>
+    <p> Op deze pagina kunt u nieuwe data toevoegen of verwijderen, daarnaast kunt u hier ook alle beschikbare data
+      aanpassen.
+    </p>
+    <br>
+    <div class="container">
+      <!-- Kolommen -->
+
+      <div class="card">
+        <div class="card-header">
+          Dashboard Studenten
+        </div>
+        <div class="card-body">
+          <p class="card-text">Het toevoegen/verwijderen/bewerken van data bij Studenten, kunt u hieronder toepassen.
+          </p>
+          <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
+            <a href='{{url_for('administratief.administratief_student_add') }}'>a</a>
+            <label class="btn btn-outline-primary" for="btnradio1">Koppeling Student - Stage aanmaken</label>
+
+            <a href='{{url_for('administratief.administratief_student_del') }}'>a</a>
+            <label class="btn btn-outline-primary" for="btnradio2">Koppeling Student - Stage verwijderen</label>
+
+            <a href='{{url_for('administratief.administratief_student_edit') }}'>a</a>
+            <label class="btn btn-outline-primary" for="btnradio3">Koppeling Student - Stage bewerken</label>
+          </div>
+          <div class="card-body">
+            <a href='{{url_for('administratief.administratief_student_list') }}'>a</a>
+            <label class="btn btn-outline-primary" for="btnradio8">Alle studenten</label>
+          </div>
+        </div>
+      </div>
+    </div>
+    <br>
+    <div class="container">
+
+      <div class="row">
+        <div class="col">
+          <div class="card">
+            <div class="card-header">
+              Dashboard Begeleiders
+            </div>
+            <div class="card-body">
+              <p class="card-text">Het toevoegen/verwijderen van data bij Begeleiders, kunt u hieronder toepassen.</p>
+              <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
+                <a href='{{url_for('administratief.administratief_begeleider_add') }}'>a</a>
+                <label class="btn btn-outline-primary" for="btnradio4">Begeleider toevoegen</label>
+
+                <a href='{{url_for('administratief.administratief_begeleider_del') }}'>a</a>
+                <label class="btn btn-outline-primary" for="btnradio5">Begeleider verwijderen</label>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col">
+          <div class="card">
+            <div class="card-header">
+              Dashboard Stageplekken
+            </div>
+            <div class="card-body">
+              <p class="card-text">Het toevoegen/verwijderen van data bij Stageplekken, kunt u hieronder toepassen.</p>
+              <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
+                <a href='{{url_for('administratief.administratief_bedrijven_add') }}'>a</a>
+                <label class="btn btn-outline-primary" for="btnradio6">Stageplek toevoegen</label>
+
+                <a href='{{url_for('administratief.administratief_bedrijven_del') }}'>a</a>
+                <label class="btn btn-outline-primary" for="btnradio7">Stageplek verwijderen</label>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+
+  </center>
+</div>
+{% endblock %}
